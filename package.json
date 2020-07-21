@@ -1,0 +1,25 @@
+{
+  "name": "personalweb",
+  "version": "1.0.0",
+  "description": "Basic HTML, CSS and JS web page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebasOnti/personal_web_page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebasOnti/personal_web_page/issues"
+  },
+  "homepage": "https://github.com/SebasOnti/personal_web_page#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1"
+  }
+}
