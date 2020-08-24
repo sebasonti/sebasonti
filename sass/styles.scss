@@ -9,18 +9,20 @@
 :root {
     /*colors*/
     --first-color: #206a5d;//206a5d;
-    --first-alt-color: #177060;
+    --first-alt-color: #206a5d66;
     --second-color: #1f4068;//ffd571;
-    --second-alt-color: #ecbc4c;
+    --second-alt-color: #1f406866;
     --third-color: #3b2e52;
-    --third-alt-color: #28568f;
+    --third-alt-color: #3b2e5266;
     --fourth-color: #1b1c25;
-    --fourth-alt-color: #473279;
+    --fourth-alt-color: #1b1c2588;
     --borders-color: #ff5733;
     --nav-color: #ff5833;
     --nav-alt-color: #810000;
+    --fainter-color: #ebecf1c0;
     --light-text-color: #ebecf1;
     --dark-text-color: #050505;
+    --title-text-color: #ecbc4c;
 
     /*sizes*/
     --h1-font-size        : calc((24px/16px) * 1rem);
@@ -36,12 +38,15 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    background-color: var(--light-text-color);
 }
 
 header {
     width: 7.5rem;
-    background-color: var(--nav-color);
-    height: 27rem;
+    background-color: var(--first-color);
+    color: var(--title-text-color);
+    border: 3px solid var(--title-text-color);
+    height: 25rem;
     position: fixed;
     top: 50%;
     left: 5rem;
@@ -69,7 +74,14 @@ header {
     position: relative;
     height: 5rem;
     width: 7.5rem;
-    border-radius: 0.5rem;
+}
+
+ul:first-child {
+    border-top: 0.5rem;
+}
+
+ul:last-child {
+    border-bottom: 0.5rem;
 }
 
 .presentation {
@@ -77,7 +89,7 @@ header {
 }
 
 .menu-link {
-    color: var(--dark-text-color);
+    color: inherit;
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
@@ -87,16 +99,15 @@ header {
     transform: translate(-50%,-50%);
 }
 
-.menu-item:hover {
+/*.menu-item:hover {
     background-color: var(--nav-alt-color);
-}
+}*/
 
 .menu-link::before {
     content: '';
     display: block;
     height: 0.2rem;
     background-color: var(--light-text-color);
-    color: var(--body-bg-color);
     transform: scale(0, 1);
     transition: transform .5s;
     margin-bottom: 0.1rem;
@@ -114,53 +125,65 @@ header {
     width: 100%;
     height: 100vh;
     position: static;
-    padding: 5rem;
+    padding: 2rem;
 }
 
 .title {
     padding: 1rem;
-    border: 5px solid var(--second-alt-color);
-    background-color: var(--light-text-color);
+    border: 3px solid var(--title-text-color);
+    background-color: var(--first-color);
     width: fit-content;
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+    color: var(--title-text-color);
+    border-radius: 0.5rem;
 }
 
 .main-title {
     top: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
+    background-color: var(--fainter-color);
+    color: var(--fourth-color)
 }
 
 #presentation {
     background-color: transparent;
-    background-image: url("/img/comp_screen.jpg");
+    background-image: url("/img/comp_screen-min.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
 #profile {
-    background-color: var(--first-color);
+    background-color: var(--first-alt-color);
 }
 
 #work-ex {
-    background-color: var(--second-color);
+    background-color: var(--second-alt-color);
 }
 
 #academic-bg {
     background-color: transparent;
-    background-image: url("/img/code.jpg");
+    background-image: url("/img/code-min.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
 #skills {
-    background-color: var(--third-color);
+    background-color: var(--third-alt-color);
 }
 
 #contact {
-    background-color: var(--fourth-color);
+    background-color: var(--fourth-alt-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

@@ -8,10 +8,10 @@ sass.compiler = require('node-sass');
 gulp.task('sass', function () {
     return gulp.src('./sass/**/*.scss')
         .pipe(sass(
-            /*{
-                outputStyle: 'expanded',
-                sourceComments: true
-            }*/
+            {
+                outputStyle: 'compressed',
+                sourceComments: false
+            }
         ).on('error', sass.logError))
         .pipe(gulp.dest('./css'));
 });
