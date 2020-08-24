@@ -1,5 +1,5 @@
-import disableScroll from '/js/preventScroll.js';
-import { enableScroll } from '/js/preventScroll.js';
+import disableScroll from './preventScroll.js';
+import { enableScroll } from './preventScroll.js';
 
 const screenHeight = window.innerHeight;
 const content = document.querySelector('main');

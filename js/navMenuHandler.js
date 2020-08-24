@@ -45,7 +45,6 @@ const titleColors = () => {
     navMenu.style.backgroundColor = bgColor;
     title.style.color = color;
     navMenu.style.color = color;
-    console.log(currentSection);
 }
 
 const navColorsListener = () => addEventListener('scroll', titleColors);
