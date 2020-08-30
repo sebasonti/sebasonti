@@ -1,52 +1,50 @@
 const screenHeight = window.innerHeight;
-const content = document.querySelector('main');
-const navMenu = document.querySelector('header');
-let title;
+const navMenu = document.querySelector('.nav-menu');
 const navColors = {
-    firstColor: '#206a5d',
-    firstAltColor: '#206a5d88',
-    secondColor: '#1f4068',
-    secondAltColor: '#1f406844',
-    thirdColor: '#3b2e52',
-    thirdAltColor: '#3b2e5244',
-    fourthColor: '#1b1c25',
-    fourthAltColor: '#1b1c2544',
-    lightTextColor: '#ebecf1',
+    blue: '#569cd6',
+    lightBlue: '#9cdcfe',
+    green: '#4ec9b0',
+    salmon: '#d69d85',
+    beige: '#d9d9d9',
+    lightColor: '#ebecf1',
     fainterColor: '#ebecf1c0',
-    titleTextColor: '#ecbc4c'
+    darkColor: '#050e13',
+    darkFainterColor: '#050e13c0',
+    transparent: 'transparent',
 }
 
 const titleColors = () => {
     const currentSection = Math.round(scrollY / screenHeight);
-    title = content.children[currentSection].firstElementChild.firstElementChild;
-    let bgColor, color = navColors.titleTextColor;
+    let bgColor, color;
     switch (currentSection) {
         case 0:
-        case 3:
-            bgColor = navColors.fainterColor;
-            color = navColors.fourthColor;
+        case 2:
+            bgColor = navColors.transparent;
+            color = navColors.lightColor;
             break;
         case 1:
-            bgColor = navColors.firstColor;
-            break;
-        case 2:
-            bgColor = navColors.secondColor;
+        case 3:
+            bgColor = navColors.transparent;
+            color = navColors.darkColor;
             break;
         case 4:
-            bgColor = navColors.thirdColor;
+            bgColor = navColors.darkFainterColor;
+            color = navColors.lightColor;
             break;
         case 5:
-            bgColor = navColors.fourthColor;
+            bgColor = navColors.transparent;
+            color = navColors.lightColor;
             break;
         default:
             break;
     }
-    title.style.backgroundColor = bgColor;
+    //title.style.backgroundColor = bgColor;
     navMenu.style.backgroundColor = bgColor;
-    title.style.color = color;
+    //title.style.color = color;
     navMenu.style.color = color;
+    navMenu.style.borderColor = color;
 }
 
-const navColorsListener = () => addEventListener('scroll', titleColors);
+const navColorsScrollListener = () => addEventListener('scroll', titleColors);
 
-export default navColorsListener;
+export default navColorsScrollListener;
