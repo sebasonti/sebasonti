@@ -1,5 +1,7 @@
 import createScrollListener from './scrollHandler.js';
-import navColorsListener from './navMenuHandler.js';
+import navColorsScrollListener from './navMenuHandler.js';
+import navColorsHoverListener from './navMenuHoverHandler.js';
 
 createScrollListener();
-navColorsListener();
+navColorsScrollListener();
+navColorsHoverListener();
