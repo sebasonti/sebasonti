@@ -42,10 +42,10 @@ const deleteScrollListener = () => {
 const navMenu = document.querySelector('.nav-menu');
 
 navMenu.addEventListener('click', () => {
-    deleteScrollListener();
+    // deleteScrollListener();
     setTimeout(() => {
         lastScroll = scrollY;
-        createScrollListener();
+        // createScrollListener();
     }, 750);
 });
 
