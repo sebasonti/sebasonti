@@ -15,7 +15,7 @@ const navColors = {
 }
 
 const titleColors = () => {
-    if (innerWidth > 480 && innerWidth < 1200)
+    if (innerWidth > 480)
     {
         const currentSection = Math.round(scrollY / screenHeight);
         let bgColor, color;

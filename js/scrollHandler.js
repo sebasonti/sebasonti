@@ -49,9 +49,9 @@ navMenu.addEventListener('click', () => {
     console.log(menu.classList);
     menu.classList.add("inactive");
     toggleNavMenu.classList.remove("inactive");
-    setTimeout(() => {
-        // createScrollListener();
-    }, 750);
+    // setTimeout(() => {
+    //     // createScrollListener();
+    // }, 750);
 });
 
 export default createScrollListener;
