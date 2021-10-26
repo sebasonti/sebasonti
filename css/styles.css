@@ -14,6 +14,7 @@
     --h2-font-size: calc((20px/16px) * 1rem);
     --h3-font-size: calc((16px/16px) * 1rem);
     --border-radius: 0.5em;
+    --border-radius-s: 0.25em;
     --border-width: 2px;
     --normal-font-size: calc((15px/16px) * 1rem);
     --small-font-size: calc((13px/16px) * 1rem);
@@ -79,8 +80,47 @@ a {
     text-decoration: none;
 }
 
+.toggle-nav-menu {
+    width: 2rem;
+    height: 2.5rem;
+    position: fixed;
+    color: var(--light-color);
+    background-color: unset;
+    background-color: var(--dark-fainter-color);
+    font-size: 1.5rem;
+    border-color: var(--light-color);
+    border-width: 0;
+    border-right-width: var(--border-width);
+    border-bottom-width: var(--border-width);
+    border-radius: var(--border-radius-s);
+    border-top-left-radius: 0;
+}
+
+@media screen and (min-width: 480px) {
+    .toggle-nav-menu {
+        display: none;
+    }
+}
+
 .nav-menu {
-    display: none;
+    border: var(--border-width) solid var(--light-color);
+    color: var(--light-color);
+    position: fixed;
+    top: 50%;
+    transform: translate(0%, -50%);
+    border-radius: var(--border-radius);
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        height: 100vh;
+        width: 100vw;
+        background-color: var(--dark-color);
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
 }
 
 @media screen and (min-width: 480px) {
@@ -176,7 +216,7 @@ a {
 
 #presentation {
     display: flex;
-    background-color: var(--blue);
+    background-color: var(--dark-color);
 }
 
 @media screen and (min-width: 480px)
@@ -634,10 +674,11 @@ section:last-child .title {
 
 @media screen and (max-width: 480px)
 {
-    .hide-s {
+    .inactive {
         display: none;
     }
 }
+
 /* 
 #favicon {
     font-size: 32px;

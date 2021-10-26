@@ -6,45 +6,50 @@ const content = document.querySelector('main');
 let lastScroll = scrollY;
 const interval = 500;
 
-const isScrolledToSection = section => {
-    if (section * screenHeight === scrollY) {
-        enableScroll();
-        createScrollListener();
-        lastScroll = section * screenHeight;
-    } else {
-        content.children[section].scrollIntoView(0, 0);
-        setTimeout(isScrolledToSection, interval, section);
-    }
-}
+// const isScrolledToSection = section => {
+//     if (section * screenHeight === scrollY) {
+//         enableScroll();
+//         createScrollListener();
+//         lastScroll = section * screenHeight;
+//     } else {
+//         content.children[section].scrollIntoView(0, 0);
+//         setTimeout(isScrolledToSection, interval, section);
+//     }
+// }
 
-const scrollToSection = () => {
-    const currentSection = Math.floor(scrollY / screenHeight);
-    if (scrollY - (currentSection * screenHeight) > (screenHeight / 15) && scrollY > lastScroll) {
-        deleteScrollListener();
-        disableScroll();
-        isScrolledToSection(currentSection + 1);
-    }
-    else if (scrollY - (currentSection * screenHeight) < (14 * screenHeight / 15) && scrollY < lastScroll) {
-        deleteScrollListener();
-        disableScroll();
-        isScrolledToSection(currentSection);
-    }
-}
+// const scrollToSection = () => {
+//     const currentSection = Math.floor(scrollY / screenHeight);
+//     if (scrollY - (currentSection * screenHeight) > (screenHeight / 15) && scrollY > lastScroll) {
+//         deleteScrollListener();
+//         disableScroll();
+//         isScrolledToSection(currentSection + 1);
+//     }
+//     else if (scrollY - (currentSection * screenHeight) < (14 * screenHeight / 15) && scrollY < lastScroll) {
+//         deleteScrollListener();
+//         disableScroll();
+//         isScrolledToSection(currentSection);
+//     }
+// }
 
 const createScrollListener = () => {
     addEventListener('scroll', scrollToSection);
 }
 
-const deleteScrollListener = () => {
-    removeEventListener('scroll', scrollToSection);
-}
+// const deleteScrollListener = () => {
+//     removeEventListener('scroll', scrollToSection);
+// }
 
 const navMenu = document.querySelector('.nav-menu');
+const menu = document.getElementById("nav-menu");
+const toggleNavMenu = document.querySelector('.toggle-nav-menu');
 
 navMenu.addEventListener('click', () => {
     // deleteScrollListener();
+    // lastScroll = scrollY;
+    console.log(menu.classList);
+    menu.classList.add("inactive");
+    toggleNavMenu.classList.remove("inactive");
     setTimeout(() => {
-        lastScroll = scrollY;
         // createScrollListener();
     }, 750);
 });

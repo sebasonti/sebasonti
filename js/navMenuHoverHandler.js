@@ -40,4 +40,9 @@ const navColorsHoverListener = () => {
     });
 }
 
+const presentation = document.getElementById("presentation");
+presentation.addEventListener('click', () => {
+    presentation.style.backgroundColor = colors[nextColor()];
+});
+
 export default navColorsHoverListener;
